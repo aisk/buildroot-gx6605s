@@ -3,8 +3,8 @@
 Quick Start for qemu run
 ========================
  echo "First download the files.";
- wget https://gitlab.com/c-sky/buildroot/-/jobs/<buildroot-job_id>/artifacts/raw/output/images/csky_toolchain_<buildroot-config>_<buildroot-version>.tar.xz;
- wget https://gitlab.com/c-sky/buildroot/-/jobs/<buildroot-job_id>/artifacts/raw/output/images/vmlinux.xz;
+ wget -nc https://gitlab.com/c-sky/buildroot/-/jobs/<buildroot-job_id>/artifacts/raw/output/images/csky_toolchain_<buildroot-config>_<buildroot-version>.tar.xz;
+ wget -nc https://gitlab.com/c-sky/buildroot/-/jobs/<buildroot-job_id>/artifacts/raw/output/images/vmlinux.xz;
 
  echo "Now let's run on qemu";
  xz -d vmlinux.xz;
@@ -65,9 +65,9 @@ Run with Jtag
 Build linux kernel
 ==================
  echo "Download kernel source, csky patch and rootfs";
- wget https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-<kernel-version>.tar.xz;
- wget https://gitlab.com/c-sky/buildroot/-/jobs/<buildroot-job_id>/artifacts/raw/output/images/linux-<kernel-version>.patch.xz;
- wget https://gitlab.com/c-sky/buildroot/-/jobs/<buildroot-job_id>/artifacts/raw/output/images/rootfs.cpio.xz;
+ wget -nc https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-<kernel-version>.tar.xz;
+ wget -nc https://gitlab.com/c-sky/buildroot/-/jobs/<buildroot-job_id>/artifacts/raw/output/images/linux-<kernel-version>.patch.xz;
+ wget -nc https://gitlab.com/c-sky/buildroot/-/jobs/<buildroot-job_id>/artifacts/raw/output/images/rootfs.cpio.xz;
 
  echo "Now extra kernel source, patch it and compile";
  tar -Jxf linux-<kernel-version>.tar.xz;
